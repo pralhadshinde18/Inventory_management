@@ -16,14 +16,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.product.api import product_details, product_list, create_product,update_product,delete_product
+from core.customer.api import customer_list, customer_details, create_customer,update_customer,delete_customer
+from core.address.api import address_list,address_details,create_address,update_address,delete_address
+from core.product.api import product_list, product_details, create_product,update_product,delete_product
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('customer/', customer_list),
+    path('address/<int:customer_id>/', customer_details),
+    path('create_customer/', create_customer),
+    path('update_customer/<int:customer_id>/', update_customer),
+    path('delete_customer/<int:customer_id>/', delete_customer),
+
+    path('address/', address_list),
+    path('address/<int:address_id>/', address_details),
+    path('create_address/',create_address),
+    path('update_address/<int:address_id>/',update_address),
+    path('delete_address/<int:address_id>/',delete_address),
+
     path('product/', product_list),
     path('product/<int:product_id>/', product_details),
-    path('product-create/', create_product),
-    path('product-update/<int:product_id>/', update_product),
-    path('product-delete/<int:product_id>/', delete_product),
+    path('create_product/',create_product),
+    path('update_product/<int:product_id>/',update_product),
+    path('delete_product/<int:product_id>/',delete_product),
 
 ]

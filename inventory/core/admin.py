@@ -1,4 +1,4 @@
 from django.contrib import admin
-from core.product.admin import Product
+from core.customer.admin import Customer
 
 # Register your models here.

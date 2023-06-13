@@ -5,10 +5,10 @@ from core.product.models import Product
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ['id', 'product_name', 'description', 'price']
+        fields = ['id', 'product_name', 'description', 'price', 'quantity']
 
 
 class ProductDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ['id', ]
+        fields = ['id']
